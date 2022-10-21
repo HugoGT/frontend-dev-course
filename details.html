@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>My orders</title>
+
+    <style>
+      :root {
+        --sm: 1.4rem;
+        --md: 1.6rem;
+        --lg: 1.8rem;
+        --white: #fff;
+        --black: #000;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd9b2;
+        font-size: 62.5%;
+      }
+      body {
+        margin: 0;
+        font-size: 1.6rem;
+        font-family: "Quicksand", sans-serif;
+      }
+      .product-detail {
+        position: absolute;
+        right: 0;
+        width: 36rem;
+        padding-bottom: 2.4rem;
+      }
+      .product-detail-close {
+        background: var(--white);
+        width: 1.2rem;
+        height: 1.2rem;
+        position: absolute;
+        top: 1.2rem;
+        left: 1.2rem;
+        z-index: 2;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .product-detail-close img{
+        width: 1.2rem;
+        height: 1.2rem;
+        filter: invert(50%);
+      }
+      .product-detail > img:nth-child(2){
+        width: 100%;
+        height: 36rem;
+        object-fit: cover;
+        border-radius: 2rem;
+      }
+      .product-info {
+        margin: 0 2.4rem;
+      }
+      .product-info p:nth-child(1){
+        font-weight: bold;
+        font-size: var(--md);
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+      }
+      .product-info p:nth-child(2){
+        color: var(--very-light-pink);
+        font-size: var(--md);
+        margin-top: 0.4rem;
+        margin-bottom: 1.6rem;
+      }
+      .product-info p:nth-child(3){
+        color: var(--very-light-pink);
+        font-size: var(--sm);
+        margin-top: 0.4rem;
+        margin-bottom: 1.2rem;
+      }
+      .primary-button {
+        background-color: var(--hospital-green);
+        border-radius: 0.8rem;
+        border: none;
+        color: var(--white);
+        width: 100%;
+        cursor: pointer;
+        font-size: var(--md);
+        font-weight: bold;
+        height: 5rem;
+      }
+      .add-to-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (max-width: 640px) {
+        .product-detail{
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <aside class="product-detail">
+      <div class="product-detail-close">
+        <img src="./icons/icon_close.svg" alt="close">
+      </div>
+      <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+      <div class="product-info">
+        <p>$300,00</p>
+        <p>Bike</p>
+        <p>
+          With it's functional and practical interior, this bike also fulfills a decorative function, adding personality and a retro-vintage aesthetic to you living room or workplace.
+        </p>
+        <button class="primary-button add-to-cart-button">
+          <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+          Add to cart
+        </button>
+      </div>
+    </aside>
+  </body>
+</html>
