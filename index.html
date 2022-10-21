@@ -98,13 +98,13 @@
       }
       .desktop-menu {
         position: absolute;
-        top: 6rem;
-        right: 6rem;
+        top: 8rem;
+        right: 4rem;
         background: var(--white);
         width: 10rem;
         height: auto;
         border: 1px solid var(--very-light-pink);
-        border-radius: 6rem;
+        border-radius: 0.6rem;
         padding: 2rem 2rem 0 2rem;
       }
       .desktop-menu ul {
@@ -114,9 +114,6 @@
       }
       .desktop-menu ul li {
         text-align: end;
-      }
-      .desktop-menu ul li:nth-child(1),
-      .desktop-menu ul li:nth-child(2) {
         font-weight: bold;
       }
       .desktop-menu ul li:last-child {
@@ -130,8 +127,8 @@
       .desktop-menu ul li a {
         color: var(--back);
         text-decoration: none;
-        margin-bottom: 2rem;
         display: inline-block;
+        margin-bottom: 2rem;
       }
 
       @media (max-width: 768px) {
@@ -177,13 +174,15 @@
       <div class="desktop-menu inactive">
         <ul>
           <li>
-            <a href="/" class="title">My orders</a>
+            <a href="#" class="title">My orders</a>
           </li>
+
           <li>
-            <a href="/">My account</a>
+            <a href="#" class="">My account</a>
           </li>
+
           <li>
-            <a href="/">Sign out</a>
+            <a href="#" class="">Sign out</a>
           </li>
         </ul>
       </div>
