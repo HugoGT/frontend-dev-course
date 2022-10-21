@@ -1,0 +1,20 @@
+:root {
+  --sm: 1.4rem;
+  --md: 1.6rem;
+  --lg: 1.8rem;
+  --white: #fff;
+  --black: #000;
+  --very-light-pink: #c7c7c7;
+  --text-input-field: #f7f7f7;
+  --hospital-green: #acd9b2;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.inactive {
+  display: none;
+}
