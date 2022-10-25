@@ -3,30 +3,51 @@ const navbarEmail = $(".navbar-email");
 const desktopMenu = $(".desktop-menu");
 const mobileMenu = $(".mobile-menu");
 const iconMenu = $(".icon-menu");
+const iconClose = $(".product-detail-close")
 const iconArrow = $(".arrow");
 const ShoppingCartContainer = $("#shopping-cart-container");
+const ProductDetailContainer = $("#product-detail");
 const navbarShoppingCart = $(".navbar-shopping-cart");
 const cardsContainer = $(".cards-container");
 
 navbarEmail.addEventListener("click", toggleDesktopMenu);
 navbarShoppingCart.addEventListener("click", toggleShoppingCart);
-iconArrow.addEventListener("click", toggleShoppingCart);
 iconMenu.addEventListener("click", toggleMobileMenu);
+iconClose.addEventListener("click", closeProductDetail);
+iconArrow.addEventListener("click", toggleShoppingCart);
+
 
 function toggleDesktopMenu() {
+  ProductDetailContainer.classList.add("inactive");
   ShoppingCartContainer.classList.add("inactive");
   desktopMenu.classList.toggle("inactive");
 }
 
 function toggleMobileMenu() {
+  ProductDetailContainer.classList.add("inactive");
   ShoppingCartContainer.classList.add("inactive");
   mobileMenu.classList.toggle("inactive");
 }
 
 function toggleShoppingCart() {
+  ProductDetailContainer.classList.add("inactive");
   mobileMenu.classList.add("inactive");
   desktopMenu.classList.add("inactive");
   ShoppingCartContainer.classList.toggle("inactive");
+}
+
+function openProductDetail() {
+  mobileMenu.classList.add("inactive");
+  desktopMenu.classList.add("inactive");
+  ShoppingCartContainer.classList.add("inactive");
+  ProductDetailContainer.classList.remove("inactive")
+}
+
+function closeProductDetail() {
+  mobileMenu.classList.add("inactive");
+  desktopMenu.classList.add("inactive");
+  ShoppingCartContainer.classList.add("inactive");
+  ProductDetailContainer.classList.add("inactive")
 }
 
 const products = [];
@@ -87,17 +108,23 @@ function renderProducts(arr) {
   for (product of arr) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
+
     const productImg = document.createElement("img");
     productImg.setAttribute("src", product.image);
+    productImg.addEventListener("click", openProductDetail);
+
     const productInfo = document.createElement("div");
     productInfo.classList.add("product-info");
+
     const productInfoDiv = document.createElement("div");
     const productPrice = document.createElement("p");
     productPrice.innerText = "$" + product.price;
+
     const productName = document.createElement("p");
     productName.innerText = product.name;
     productInfoDiv.appendChild(productPrice);
     productInfoDiv.appendChild(productName);
+
     const productInfoFigure = document.createElement("figure");
     const productImgCart = document.createElement("img");
     productImgCart.setAttribute("src", "./icons/bt_add_to_cart.svg");
